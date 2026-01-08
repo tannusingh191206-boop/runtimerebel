@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Submit Grievance</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Submit Your Grievance</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="grievance.html">Submit Grievance</a>
+        <a href="admin.html">Admin</a>
+    </nav>
+</header>
+<main>
+    <form id="grievanceForm">
+        <input type="text" name="name" placeholder="Your Name" required><br>
+        <input type="email" name="email" placeholder="Your Email" required><br>
+        <textarea name="grievance" placeholder="Describe your grievance" required></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="message"></div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
