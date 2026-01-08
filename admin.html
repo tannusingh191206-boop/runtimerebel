@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin - Grievances</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Admin Panel - Grievances</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="grievance.html">Submit Grievance</a>
+        <a href="admin.html">Admin</a>
+    </nav>
+</header>
+<main>
+    <ul id="grievanceList"></ul>
+</main>
+<script>
+fetch('/admin/grievances')
+    .then(res => res.json())
+    .then(data => {
+        const list = document.getElementById('grievanceList');
+        data.forEach(g => {
+            const li = document.createElement('li');
+            li.textContent = `${g.name} (${g.email}): ${g.grievance} [${new Date(g.date).toLocaleString()}]`;
+            list.appendChild(li);
+        });
+    });
+</script>
+</body>
+</html>
